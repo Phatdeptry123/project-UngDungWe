@@ -1,23 +1,20 @@
 const mongoose = require("mongoose");
 
 const schema = mongoose.Schema({
-  book_name: {
+  tour_name: {
     type: String,
   },
-  author: {
+  tour_image: {
     type: String,
   },
-  hinh: {
-    type: String,
-  },
-  danhmuc: {
+  area: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "danhmuc",
+    ref: "area",
   },
-  mota: {
+  tour_description: {
     type: String,
   },
-  nxb: {
+  country: {
     type: String,
   },
   price: {
@@ -34,4 +31,4 @@ schema.method("toJSON", function () {
   return object;
 });
 
-module.exports = mongoose.model("book", schema);
+module.exports = mongoose.model("tour", schema);
